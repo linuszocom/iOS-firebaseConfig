@@ -90,7 +90,7 @@ coreSimulator/
 6. Lägg till remote och pusha upp till GitHub.
 
 <details>
-<summary>### GoogleService-Info.plist hamnar ändå på GitHub – varför?</summary>
+###<summary>GoogleService-Info.plist hamnar ändå på GitHub – varför?</summary>
    Git spårar filer i repot för att kunna upptäcka ändringar. `.gitignore` säger till Git vilka filer som *inte* ska börja spåras.
 
 Men om en fil redan spåras av Git spelar det ingen roll att du senare lägger den i `.gitignore` - den fortsätter vara spårad.
