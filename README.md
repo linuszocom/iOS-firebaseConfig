@@ -89,9 +89,9 @@ coreSimulator/
 5. Initiera git i Xcode (eller via terminalen).
 6. Lägg till remote och pusha upp till GitHub.
 
-### GoogleService-Info.plist hamnar ändå på GitHub – varför?
-
-Git spårar filer i repot för att kunna upptäcka ändringar. `.gitignore` säger till Git vilka filer som *inte* ska börja spåras.
+<details>
+<summary>### GoogleService-Info.plist hamnar ändå på GitHub – varför?</summary>
+   Git spårar filer i repot för att kunna upptäcka ändringar. `.gitignore` säger till Git vilka filer som *inte* ska börja spåras.
 
 Men om en fil redan spåras av Git spelar det ingen roll att du senare lägger den i `.gitignore` - den fortsätter vara spårad.
 
@@ -115,6 +115,7 @@ git commit -m "Remove GoogleService-Info.plist from repo"
 ```
 
 Nu bör du kunna pusha utan att filen följer med.
+</details>
 
 ---
 
