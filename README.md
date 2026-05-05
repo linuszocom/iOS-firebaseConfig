@@ -128,20 +128,26 @@ Ett annat sätt att slippa oroa sig är att inte ha någon plist-fil över huvud
 3. Ladda ner `GoogleService-Info.plist`, men lägg **inte** till den i projektet.
 4. Öppna plist-filen i en textredigerare, extrahera värdena du behöver och lägg in dem i `Secrets.plist`.
 
-> OBS (SwiftUI): Om appen använder modern `@main App`-struktur utan AppDelegate kan du skapa en `init` i App-structen och kalla `configureFirebase()` därifrån.
-
-Exempel med klassisk AppDelegate:
+Eftersom appen bygger på SwiftUI gör vi konfigurationen direkt i appens init()-metod:
 
 ```swift
-class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
-    ) -> Bool {
-        configureFirebase()
-        return true
-    }
+import SwiftUI
+import FirebaseCore // Glöm inte att importera Firebase
 
+@main
+struct MyApp: App {
+    
+    // Init-metoden körs allra först när appen startar
+    init() {
+        configureFirebase()
+    }
+    
+    var body: some Scene {
+        WindowGroup {
+            ContentView()
+        }
+    }
+    
     func configureFirebase() {
         // Gör om Secrets.plist till en dictionary för att komma åt datan
         guard let path = Bundle.main.path(forResource: "Secrets", ofType: "plist"),
