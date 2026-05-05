@@ -13,6 +13,9 @@ Detta är förmodligen den enklaste och vanligaste metoden: att helt enkelt läg
 1. Skapa ett nytt iOS-projekt och lägg till Firebase SDK.
 2. Skapa en `.gitignore`-fil i projektets rotmapp och lägg till de filer du vill ignorera. Exempel på `.gitignore` för Swift:
 
+<details>
+<summary>Exempel på .gitignore för swift (kopiera gärna denna till era egna projekt)</summary>
+
 ```text
 # Xcode
 DerivedData/
@@ -78,6 +81,8 @@ GoogleService-Info.plist
 # Simulator logs and caches
 coreSimulator/
 ```
+
+</details>
 
 3. Skapa/hitta ett Firebase-projekt du vill ansluta din iOS-app till.
 4. Ladda ner `GoogleService-Info.plist` och lägg filen i rotmappen på ditt projekt.
